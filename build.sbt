@@ -51,7 +51,7 @@ lazy val root = (project in file("."))
     ),
 
     libraryDependencies ++= {
-      val akkaVersion = "2.4.6"
+      val akkaVersion = "2.4.7"
       val akkaHttpJson4sVersion = "1.6.0"
       val scalaTestVersion = "2.2.6"
       Seq(
