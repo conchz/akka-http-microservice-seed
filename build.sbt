@@ -44,15 +44,15 @@ lazy val root = (project in file("."))
       _.copy(overrideScalaVersion = true)
     },
 
-    resolvers := Seq(
-      Resolver.mavenLocal,
+    resolvers ++= Seq(
       "repox" at "http://repox.gtan.com:8078/",
       "hseeberger" at "https://dl.bintray.com/hseeberger/maven/"
     ),
 
     libraryDependencies ++= {
       val akkaVersion = "2.4.7"
-      val akkaHttpJson4sVersion = "1.6.0"
+      val akkaHttpJson4sVersion = "1.7.0"
+      val jwtVersion = "1.2.0"
       val scalaTestVersion = "2.2.6"
       Seq(
         "com.typesafe.akka" %% "akka-actor" % akkaVersion,
@@ -62,6 +62,7 @@ lazy val root = (project in file("."))
         "com.typesafe.akka" %% "akka-http-spray-json-experimental" % akkaVersion,
         "de.heikoseeberger" %% "akka-http-json4s" % akkaHttpJson4sVersion,
         "com.typesafe.akka" %% "akka-http-testkit" % akkaVersion,
+        "io.igl" %% "jwt" % jwtVersion,
         "org.scalatest" %% "scalatest" % scalaTestVersion % "test"
       )
     }
